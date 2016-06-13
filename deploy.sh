@@ -39,7 +39,7 @@ MODULE_FILE
 ) > ${CHEMISTRY_MODULES}/${NAME}/${VERSION}-gcc-${GCC_VERSION}
 
 mkdir -p ${CHEMISTRY_MODULES}/${NAME}
-cp modules/$VERSION-gcc-${GCC_VERSION} ${CHEMISTRY_MODULES}/${NAME}-gcc-${GCC_VERSION}
+cp modules/$VERSION-gcc-${GCC_VERSION} ${CHEMISTRY_MODULES}/${NAME}/
 
 module add ${NAME}/${VERSION}-gcc-${VERSION}
 which autodock4
