@@ -25,7 +25,7 @@ proc ModulesHelp { } {
 
 module-whatis   "$NAME $VERSION."
 setenv       AUTODOCK_SUITE_VERSION       $VERSION
-setenv       AUTODOCK_SUITE_DIR           /apprepo/$::env(SITE)/$::env(OS)/$::env(ARCH)/$NAME/$VERSION
+setenv       AUTODOCK_SUITE_DIR           /apprepo/$::env(SITE)/$::env(OS)/$::env(ARCH)/$NAME/$VERSION-gcc-$::env(GCC_VERSION)
 prepend-path LD_LIBRARY_PATH   $::env(AUTODOCK_SUITE_DIR)/lib
 prepend-path GCC_INCLUDE_DIR   $::env(AUTODOCK_SUITE_DIR)/include
 prepend-path CFLAGS            "-I${AUTODOCK_SUITE_DIR}/include"
