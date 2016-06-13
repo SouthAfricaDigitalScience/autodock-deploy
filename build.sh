@@ -40,7 +40,7 @@ tar xzf  ${SRC_DIR}/${SOURCE_FILE} -C ${WORKSPACE} --skip-old-files
 
 for component in autodock autogrid ; do
   echo "building $component"
-  mkdir -p ${WORKSPACE}/src/build-${BUILD_NUMBER}
+  mkdir -p ${WORKSPACE}/src/${component}/build-${BUILD_NUMBER}
   cd ${WORKSPACE}/src/${component}/build-${BUILD_NUMBER}
   ../configure --prefix=${SOFT_DIR}-gcc-${GCC_VERSION}
   make -j 2

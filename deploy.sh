@@ -9,7 +9,7 @@ echo "All tests have passed, will now build into ${SOFT_DIR}"
 for component in autodock autogrid ; do
 
   echo "building $component"
-  mkdir -p ${WORKSPACE}/src/build-${BUILD_NUMBER}
+  mkdir -p ${WORKSPACE}/src/${component}/build-${BUILD_NUMBER}
   cd ${WORKSPACE}/src/${component}/build-${BUILD_NUMBER}
   rm -rf
   ../configure --prefix=${SOFT_DIR}-gcc-${GCC_VERSION}
