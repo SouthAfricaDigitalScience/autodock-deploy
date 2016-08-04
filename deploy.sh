@@ -42,7 +42,7 @@ mkdir -p ${CHEMISTRY_MODULES}/${NAME}
 cp modules/$VERSION-gcc-${GCC_VERSION} ${CHEMISTRY_MODULES}/${NAME}/
 
 echo "checking the modulefile add"
-module add ${NAME}/${VERSION}-gcc-${VERSION}
+module add ${NAME}/${VERSION}-gcc-${GCC_VERSION}
 for executable in autodock4 autogrid4 ; do
   echo "checking pat for $executable"
   which $executable
