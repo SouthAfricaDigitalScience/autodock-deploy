@@ -3,3 +3,11 @@
 # Autodock Suite
 
 Build and test scripts for the Autodock and Autogrid tools
+
+# Versions
+
+# Dependencies
+
+  * GCC
+
+# Citing
