@@ -27,17 +27,18 @@ proc ModulesHelp { } {
 
 module-whatis   "$NAME $VERSION."
 setenv       AUTODOCK_SUITE_VERSION       $VERSION
-setenv       AUTODOCK_SUITE_DIR           /apprepo/$::env(SITE)/$::env(OS)/$::env(ARCH)/$NAME/$VERSION-gcc-$::env(GCC_VERSION)
+setenv       AUTODOCK_SUITE_DIR           /data/ci-build/$::env(SITE)/$::env(OS)/$::env(ARCH)/$NAME/$VERSION-gcc-$::env(GCC_VERSION)
 prepend-path LD_LIBRARY_PATH   $::env(AUTODOCK_SUITE_DIR)/lib
 prepend-path GCC_INCLUDE_DIR   $::env(AUTODOCK_SUITE_DIR)/include
 prepend-path CFLAGS            "-I${AUTODOCK_SUITE_DIR}/include"
+prepend-path CPPFLAGS            "-I${AUTODOCK_SUITE_DIR}/include"
 prepend-path LDFLAGS           "-L${AUTODOCK_SUITE_DIR}/lib"
 prepend-path PATH              $::env(AUTODOCK_SUITE_DIR)/bin
 MODULE_FILE
 ) > modules/$VERSION-gcc-${GCC_VERSION}
 
-mkdir -p ${CHEMISTRY_MODULES}/${NAME}
-cp modules/$VERSION-gcc-${GCC_VERSION} ${CHEMISTRY_MODULES}/${NAME}/
+mkdir -p ${CHEMISTRY}/${NAME}
+cp modules/$VERSION-gcc-${GCC_VERSION} ${CHEMISTRY}/${NAME}/
 echo "checking the modulefile add"
 module add ${NAME}/${VERSION}-gcc-${GCC_VERSION}
 for executable in autodock4 autogrid4 ; do

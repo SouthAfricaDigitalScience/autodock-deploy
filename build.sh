@@ -43,5 +43,6 @@ for component in autodock autogrid ; do
   mkdir -p ${WORKSPACE}/src/${component}/build-${BUILD_NUMBER}
   cd ${WORKSPACE}/src/${component}/build-${BUILD_NUMBER}
   ../configure --prefix=${SOFT_DIR}-gcc-${GCC_VERSION}
-  make -j 2
+
+  make  
 done

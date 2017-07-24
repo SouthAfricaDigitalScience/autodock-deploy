@@ -15,7 +15,7 @@ for component in autodock autogrid ; do
   make -j 2
 done
 echo "Creating the modules file directory ${LIBRARIES_MODULES}"
-mkdir -p ${CHEMISTRY_MODULES}/${NAME}
+mkdir -p ${CHEMISTRY}/${NAME}
 (
 cat <<MODULE_FILE
 #%Module1.0
@@ -35,10 +35,10 @@ prepend-path CFLAGS            "-I${AUTODOCK_SUITE_DIR}/include"
 prepend-path LDFLAGS           "-L${AUTODOCK_SUITE_DIR}/lib"
 prepend-path PATH              $::env(AUTODOCK_SUITE_DIR)/bin
 MODULE_FILE
-) > ${CHEMISTRY_MODULES}/${NAME}/${VERSION}-gcc-${GCC_VERSION}
+) > ${CHEMISTRY}/${NAME}/${VERSION}-gcc-${GCC_VERSION}
 
-mkdir -p ${CHEMISTRY_MODULES}/${NAME}
-cp modules/$VERSION-gcc-${GCC_VERSION} ${CHEMISTRY_MODULES}/${NAME}/
+mkdir -p ${CHEMISTRY}/${NAME}
+cp modules/$VERSION-gcc-${GCC_VERSION} ${CHEMISTRY}/${NAME}/
 
 echo "checking the modulefile add"
 module add ${NAME}/${VERSION}-gcc-${GCC_VERSION}
