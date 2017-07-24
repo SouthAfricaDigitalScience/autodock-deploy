@@ -12,7 +12,8 @@ for component in autodock autogrid ; do
   cd ${WORKSPACE}/src/${component}/build-${BUILD_NUMBER}
   rm -rf
   ../configure --prefix=${SOFT_DIR}-gcc-${GCC_VERSION}
-  make -j 2
+  make
+  make install
 done
 echo "Creating the modules file directory ${LIBRARIES_MODULES}"
 mkdir -p ${CHEMISTRY}/${NAME}
