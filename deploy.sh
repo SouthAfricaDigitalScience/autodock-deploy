@@ -3,6 +3,7 @@
 . /etc/profile.d/modules.sh
 echo ${SOFT_DIR}
 module add deploy
+module  add gcc/${GCC_VERSION}
 echo ${SOFT_DIR}
 echo "All tests have passed, will now build into ${SOFT_DIR}"
 for component in autodock autogrid ; do
