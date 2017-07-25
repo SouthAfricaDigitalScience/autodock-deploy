@@ -39,8 +39,6 @@ prepend-path PATH              $::env(AUTODOCK_SUITE_DIR)/bin
 MODULE_FILE
 ) > ${CHEMISTRY}/${NAME}/${VERSION}-gcc-${GCC_VERSION}
 
-mkdir -p ${CHEMISTRY}/${NAME}
-cp modules/$VERSION-gcc-${GCC_VERSION} ${CHEMISTRY}/${NAME}/
 
 echo "checking the modulefile add"
 module add ${NAME}/${VERSION}-gcc-${GCC_VERSION}
