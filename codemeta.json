@@ -1,0 +1,23 @@
+{
+  "@context": "https://raw.githubusercontent.com/codemeta/codemeta/master/codemeta.jsonld",
+  "@type": "Code",
+  "author": [
+    {
+      "@id": "http://orcid.org/0000-0002-6607-7145",
+      "@type": "Person",
+      "email": "bbecker@csir.co.za",
+      "name": "Bruce Becker",
+      "affiliation": "C.S.I.R. Meraka Institute"
+    }
+  ],
+  "identifier": "",
+  "codeRepository": "https://github.com/SouthAfricaDigitalScience/autodock-deploy",
+  "datePublished": "2017-07-27",
+  "dateModified": "2017-07-27",
+  "dateCreated": "2017-07-27",
+  "description": "Build and test scripts for the Autodock and Autogrid tools. This project builds  autodock4, **not autodock vina**.",
+  "keywords": "chemistry, HPC, CODE-RADE",
+  "license": "Apache 2.0",
+  "title": "autodock-deploy",
+  "version": "v0.0.1"
+}
