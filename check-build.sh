@@ -24,15 +24,10 @@ proc ModulesHelp { } {
     puts stderr "       This module does nothing but alert the user"
     puts stderr "       that the [module-info name] module is not available"
 }
-
+module ad  gcc/${GCC_VERSION}
 module-whatis   "$NAME $VERSION."
 setenv       AUTODOCK_SUITE_VERSION       $VERSION
 setenv       AUTODOCK_SUITE_DIR           /data/ci-build/$::env(SITE)/$::env(OS)/$::env(ARCH)/$NAME/$VERSION-gcc-$::env(GCC_VERSION)
-prepend-path LD_LIBRARY_PATH   $::env(AUTODOCK_SUITE_DIR)/lib
-prepend-path GCC_INCLUDE_DIR   $::env(AUTODOCK_SUITE_DIR)/include
-prepend-path CFLAGS            "-I${AUTODOCK_SUITE_DIR}/include"
-prepend-path CPPFLAGS            "-I${AUTODOCK_SUITE_DIR}/include"
-prepend-path LDFLAGS           "-L${AUTODOCK_SUITE_DIR}/lib"
 prepend-path PATH              $::env(AUTODOCK_SUITE_DIR)/bin
 MODULE_FILE
 ) > modules/$VERSION-gcc-${GCC_VERSION}
