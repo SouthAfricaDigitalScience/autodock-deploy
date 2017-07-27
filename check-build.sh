@@ -24,7 +24,7 @@ proc ModulesHelp { } {
     puts stderr "       This module does nothing but alert the user"
     puts stderr "       that the [module-info name] module is not available"
 }
-module ad  gcc/${GCC_VERSION}
+module add gcc/${GCC_VERSION}
 module-whatis   "$NAME $VERSION."
 setenv       AUTODOCK_SUITE_VERSION       $VERSION
 setenv       AUTODOCK_SUITE_DIR           /data/ci-build/$::env(SITE)/$::env(OS)/$::env(ARCH)/$NAME/$VERSION-gcc-$::env(GCC_VERSION)
