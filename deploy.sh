@@ -31,7 +31,7 @@ proc ModulesHelp { } {
 module-whatis   "$NAME $VERSION : See https://github.com/SouthAfricaDigitalScience/autodock-deploy"
 module add gcc/${GCC_VERSION}
 setenv AUTODOCK_SUITE_VERSION       $VERSION
-setenv AUTODOCK_SUITE_DIR           $::env(CVMFS_DIR)/$::env(SITE)/$::env(OS)/$::env(ARCH)/$NAME/$VERSION-gcc-$::env(GCC_VERSION)
+setenv AUTODOCK_SUITE_DIR           $::env(CVMFS_DIR)/$::env(SITE)/$::env(OS)/$::env(ARCH)/$NAME/$VERSION-gcc-$GCC_VERSION
 prepend-path PATH              $::env(AUTODOCK_SUITE_DIR)/bin
 MODULE_FILE
 ) > ${CHEMISTRY}/${NAME}/${VERSION}-gcc-${GCC_VERSION}
