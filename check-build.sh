@@ -27,7 +27,7 @@ proc ModulesHelp { } {
 module add gcc/${GCC_VERSION}
 module-whatis   "$NAME $VERSION."
 setenv       AUTODOCK_SUITE_VERSION       $VERSION
-setenv       AUTODOCK_SUITE_DIR           /data/ci-build/$::env(SITE)/$::env(OS)/$::env(ARCH)/$NAME/$VERSION-gcc-$::env(GCC_VERSION)
+setenv       AUTODOCK_SUITE_DIR           /data/ci-build/$::env(SITE)/$::env(OS)/$::env(ARCH)/$NAME/$VERSION-gcc-$GCC_VERSION
 prepend-path PATH              $::env(AUTODOCK_SUITE_DIR)/bin
 MODULE_FILE
 ) > modules/$VERSION-gcc-${GCC_VERSION}
